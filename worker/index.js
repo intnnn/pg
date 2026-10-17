@@ -28,7 +28,7 @@ const page = `<!doctype html>
 .hero{position:relative;display:flex;align-items:center;min-height:370px;padding:0;overflow:hidden;background:#111913;color:#f5efe5}
 .heroVisual{position:absolute;inset:0 0 0 auto;width:49%;height:100%;overflow:hidden;background:radial-gradient(ellipse at 68% 37%,rgba(201,165,107,.2) 0%,rgba(201,165,107,.08) 38%,transparent 72%),linear-gradient(110deg,#111913 0%,#201d14 100%)}
 .heroVisual .heroPortrait{position:absolute;display:block;width:440px;height:440px;max-width:none;left:50%;top:8px;transform:translateX(-50%);object-fit:cover;filter:brightness(.68) saturate(.62);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 17%,#000 83%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 17%,#000 83%,transparent 100%)}
-.heroVisual .heroCoin{position:absolute;z-index:0;width:280px;height:280px;max-width:none;left:78%;top:48px;transform:translateX(-50%);object-fit:contain;opacity:.2;mix-blend-mode:screen;pointer-events:none}
+.heroVisual .heroCoin{position:absolute;z-index:0;width:230px;height:230px;max-width:none;left:78%;top:48px;transform:translateX(-50%);object-fit:contain;opacity:.2;mix-blend-mode:screen;pointer-events:none}
 .heroVisual:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#111913 0%,rgba(17,25,19,.62) 7%,transparent 22%),linear-gradient(90deg,#111913 0%,transparent 44%);pointer-events:none}
 .heroGrid{position:relative;z-index:1;display:block;padding:16px 0 20px}
 .heroContent{max-width:580px}
@@ -61,7 +61,7 @@ const page = `<!doctype html>
   .hero{display:block;min-height:0}
   .heroVisual{inset:0 0 auto;width:100%;height:390px}
   .heroVisual .heroPortrait{position:absolute;width:440px;height:440px;left:50%;top:8px;transform:translateX(-50%);object-fit:cover;object-position:center;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 17%,#000 83%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 17%,#000 83%,transparent 100%)}
-  .heroVisual .heroCoin{width:235px;height:235px;left:80%;top:48px;opacity:.18}
+  .heroVisual .heroCoin{width:195px;height:195px;left:80%;top:48px;opacity:.18}
   .heroVisual{background:radial-gradient(ellipse at 50% 32%,rgba(201,165,107,.24) 0%,rgba(201,165,107,.08) 45%,transparent 75%),linear-gradient(120deg,#111913 0%,#201d14 100%)}
   .heroVisual:after{background:linear-gradient(0deg,#111913 0%,rgba(17,25,19,.96) 12%,rgba(17,25,19,.48) 39%,transparent 70%)}
   .heroGrid{padding:225px 0 28px}
