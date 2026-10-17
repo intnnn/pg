@@ -25,15 +25,14 @@ const page = `<!doctype html>
 .navlinks{color:#e4dfd3}
 .navlinks .navcta{background:var(--gold);color:#162019}
 .menu{color:#f4eadb}
-.hero{position:relative;display:block;min-height:0;padding:0;overflow:hidden;background:radial-gradient(circle at 50% 15%,#283025 0%,#121a15 58%,#0e1511 100%);color:#f5efe5}
-.heroVisual{position:relative;width:100%;height:clamp(430px,47vw,610px);overflow:hidden;display:flex;justify-content:center;background:radial-gradient(ellipse at center,#534f3e 0%,#23291f 47%,#111913 80%)}
-.heroVisual:before{content:'';position:absolute;inset:-35px;background:url(__HERO__) center 30%/cover no-repeat;filter:blur(42px) brightness(.28) saturate(.58);opacity:.75}
-.heroVisual img{position:relative;display:block;width:min(100%,560px);height:100%;object-fit:cover;object-position:center 28%;filter:brightness(.82) saturate(.78) sepia(.06);-webkit-mask-image:linear-gradient(90deg,transparent,#000 17%,#000 83%,transparent);mask-image:linear-gradient(90deg,transparent,#000 17%,#000 83%,transparent)}
-.heroVisual:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#111913 0%,rgba(17,25,19,.35) 12%,transparent 37%),linear-gradient(90deg,rgba(17,25,19,.4),transparent 25%,transparent 75%,rgba(17,25,19,.4));pointer-events:none}
-.heroGrid{position:relative;z-index:1;display:block;padding:52px 0 76px}
-.heroContent{max-width:780px}
+.hero{position:relative;display:flex;align-items:center;min-height:740px;padding:0;overflow:hidden;background:#111913;color:#f5efe5}
+.heroVisual{position:absolute;inset:0 0 0 auto;width:68%;height:100%;overflow:hidden;background:#111913}
+.heroVisual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 23%;filter:brightness(.62) saturate(.64);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 30%,#000 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 30%,#000 100%)}
+.heroVisual:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#111913 0%,rgba(17,25,19,.72) 12%,transparent 46%),linear-gradient(90deg,#111913 0%,transparent 44%);pointer-events:none}
+.heroGrid{position:relative;z-index:1;display:block;padding:112px 0 122px}
+.heroContent{max-width:630px}
 .hero .eyebrow{color:var(--gold2);letter-spacing:.25em}
-.hero h1{font:400 clamp(58px,6.7vw,97px)/.99 var(--serif);letter-spacing:-.055em;text-transform:uppercase;margin:22px 0 21px;max-width:none;text-shadow:0 2px 26px rgba(0,0,0,.16)}
+.hero h1{font:400 clamp(58px,6.5vw,90px)/.99 var(--serif);letter-spacing:-.055em;text-transform:uppercase;margin:22px 0 21px;max-width:none;text-shadow:0 2px 26px rgba(0,0,0,.16)}
 .hero h1 em{display:block;font-style:normal;font-weight:400;color:#f6efe3}
 .heroStrap{display:flex;align-items:center;gap:18px;color:var(--gold2);font-size:11px;letter-spacing:.24em;text-transform:uppercase}
 .heroStrap:before{content:'';width:43px;height:1px;background:var(--gold)}
@@ -44,16 +43,19 @@ const page = `<!doctype html>
 .hero .micro{color:#c6c4b9}
 .trustStrip{border-top:1px solid rgba(201,165,107,.28)}
 @media(max-width:900px) and (min-width:651px){
-  .heroVisual{height:500px}
-  .heroContent{max-width:100%}
-  .hero h1{font-size:clamp(52px,7vw,70px)}
+  .hero{min-height:690px}
+  .heroVisual{width:76%}
+  .heroGrid{padding:90px 0 100px}
+  .heroContent{max-width:57%}
+  .hero h1{font-size:clamp(48px,6.3vw,64px)}
 }
 @media(max-width:650px){
   .navlinks.open{background:#111913;border-bottom-color:rgba(201,165,107,.25)}
-  .heroVisual{height:430px}
-  .heroVisual img{width:100%;object-position:center 30%;-webkit-mask-image:none;mask-image:none}
-  .heroVisual:after{background:linear-gradient(0deg,#111913 0%,rgba(17,25,19,.35) 12%,transparent 36%)}
-  .heroGrid{padding:31px 0 58px}
+  .hero{display:block;min-height:0}
+  .heroVisual{inset:0 0 auto;width:100%;height:560px}
+  .heroVisual img{object-position:center 24%;-webkit-mask-image:none;mask-image:none}
+  .heroVisual:after{background:linear-gradient(0deg,#111913 0%,rgba(17,25,19,.96) 12%,rgba(17,25,19,.48) 39%,transparent 70%)}
+  .heroGrid{padding:420px 0 62px}
   .heroContent{max-width:100%}
   .hero h1{font-size:clamp(46px,12.4vw,64px);line-height:1.02;margin:16px 0 18px}
   .hero .intro{font-size:14px;max-width:100%;margin-top:20px}
