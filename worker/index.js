@@ -59,11 +59,12 @@ const html = page
   .replaceAll("__PORTRAIT__", `data:image/jpeg;base64,${portraitData}`)
   .replaceAll("__GOLD__", `data:image/jpeg;base64,${goldData}`);
 
-function parseTable(source, id) {
-  const start = source.indexOf(`id="${id}"`);
-  if (start < 0) return [];
+function parseTable(source, heading) {
+  const title = source.indexOf(heading);
+  if (title < 0) return [];
+  const start = source.indexOf('<table', title);
   const tableEnd = source.indexOf('</table>', start);
-  if (tableEnd < 0) return [];
+  if (start < 0 || tableEnd < 0) return [];
   const table = source.slice(start, tableEnd + 8);
   const rows = [...table.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].slice(1);
   return rows.map(m => {
@@ -83,8 +84,8 @@ export default {
         const upstream = await fetch(`https://publicgold.com.my/?_=${Date.now()}`, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GoldPriceReader/1.0)', 'Accept': 'text/html' }, cf: { cacheTtl: 0, cacheEverything: false } });
         if (!upstream.ok) throw new Error(`Official rate page returned ${upstream.status}.`);
         const source = await upstream.text();
-        const jewel = parseTable(source, 'BhKzxdstc2');
-        const buyback = parseTable(source, 'BhKzxdtc2');
+        const jewel = parseTable(source, 'PG Jewel');
+        const buyback = parseTable(source, 'Non-PG Gold Buyback');
         const updatedAt = liveTimestamp(source);
         if (jewel.length !== 2 || buyback.length !== 2 || !updatedAt) throw new Error('Could not verify both price tables and their update time.');
         return Response.json({ ok: true, jewel, buyback, updatedAt, source: 'https://publicgold.com.my/' }, { headers: { 'cache-control': 'no-store, max-age=0' } });
