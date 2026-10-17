@@ -26,10 +26,10 @@ const page = `<!doctype html>
 .navlinks .navcta{background:var(--gold);color:#162019}
 .menu{color:#f4eadb}
 .hero{position:relative;display:block;min-height:0;padding:0;overflow:hidden;background:radial-gradient(circle at 50% 15%,#283025 0%,#121a15 58%,#0e1511 100%);color:#f5efe5}
-.heroVisual{position:relative;width:100%;height:clamp(430px,47vw,610px);overflow:hidden;display:flex;justify-content:center;background:#b6a981}
-.heroVisual:before{content:'';position:absolute;inset:-45px;background:url(__HERO__) center 30%/cover no-repeat;filter:blur(54px) brightness(.86) saturate(.7)}
-.heroVisual img{position:relative;display:block;width:min(100%,800px);height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.9) saturate(.82);-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
-.heroVisual:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#111913 0%,rgba(17,25,19,.35) 12%,transparent 36%);pointer-events:none}
+.heroVisual{position:relative;width:100%;height:clamp(430px,47vw,610px);overflow:hidden;display:flex;justify-content:center;background:radial-gradient(ellipse at center,#534f3e 0%,#23291f 47%,#111913 80%)}
+.heroVisual:before{content:'';position:absolute;inset:-35px;background:url(__HERO__) center 30%/cover no-repeat;filter:blur(42px) brightness(.28) saturate(.58);opacity:.75}
+.heroVisual img{position:relative;display:block;width:min(100%,560px);height:100%;object-fit:cover;object-position:center 28%;filter:brightness(.82) saturate(.78) sepia(.06);-webkit-mask-image:linear-gradient(90deg,transparent,#000 17%,#000 83%,transparent);mask-image:linear-gradient(90deg,transparent,#000 17%,#000 83%,transparent)}
+.heroVisual:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#111913 0%,rgba(17,25,19,.35) 12%,transparent 37%),linear-gradient(90deg,rgba(17,25,19,.4),transparent 25%,transparent 75%,rgba(17,25,19,.4));pointer-events:none}
 .heroGrid{position:relative;z-index:1;display:block;padding:52px 0 76px}
 .heroContent{max-width:780px}
 .hero .eyebrow{color:var(--gold2);letter-spacing:.25em}
@@ -51,7 +51,8 @@ const page = `<!doctype html>
 @media(max-width:650px){
   .navlinks.open{background:#111913;border-bottom-color:rgba(201,165,107,.25)}
   .heroVisual{height:430px}
-  .heroVisual img{width:100%;-webkit-mask-image:none;mask-image:none}
+  .heroVisual img{width:100%;object-position:center 30%;-webkit-mask-image:none;mask-image:none}
+  .heroVisual:after{background:linear-gradient(0deg,#111913 0%,rgba(17,25,19,.35) 12%,transparent 36%)}
   .heroGrid{padding:31px 0 58px}
   .heroContent{max-width:100%}
   .hero h1{font-size:clamp(46px,12.4vw,64px);line-height:1.02;margin:16px 0 18px}
