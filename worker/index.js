@@ -32,7 +32,7 @@ const page = `<!doctype html>
 .heroGrid{position:relative;z-index:1;display:block;padding:16px 0 20px}
 .heroContent{max-width:580px}
 .hero .eyebrow{color:var(--gold2);letter-spacing:.25em;font-size:9px}
-.hero h1{font:400 clamp(50px,5vw,70px)/.96 var(--serif);letter-spacing:-.055em;text-transform:uppercase;margin:9px 0 8px;max-width:none;text-shadow:0 2px 26px rgba(0,0,0,.16)}
+.hero h1{font:400 clamp(46px,4.6vw,64px)/.96 var(--serif);letter-spacing:-.055em;text-transform:uppercase;margin:9px 0 8px;max-width:none;text-shadow:0 2px 26px rgba(0,0,0,.16)}
 .hero h1 em{display:block;font-style:normal;font-weight:400;color:#f6efe3}
 .heroStrap{display:flex;align-items:center;gap:10px;color:var(--gold2);font-size:10px;letter-spacing:.24em;text-transform:uppercase}
 .heroStrap:before{content:'';width:30px;height:1px;background:var(--gold)}
@@ -64,7 +64,7 @@ const page = `<!doctype html>
   .heroVisual:after{background:linear-gradient(0deg,#111913 0%,rgba(17,25,19,.96) 12%,rgba(17,25,19,.48) 39%,transparent 70%)}
   .heroGrid{padding:225px 0 28px}
   .heroContent{max-width:100%}
-  .hero h1{font-size:clamp(39px,11vw,52px);line-height:.98;margin:8px 0}
+  .hero h1{font-size:clamp(36px,10vw,48px);line-height:.98;margin:8px 0}
   .hero .intro{font-size:13px;max-width:100%;margin-top:11px}
   .hero .actions{margin:13px 0 10px}
   .heroSocials a{width:38px;height:38px;justify-content:center;padding:0}
@@ -83,11 +83,9 @@ const page = `<!doctype html>
 <section class="hero">
   <div class="heroVisual"><img src="__HERO__" alt="Potret Intan Mohd Supian"></div>
   <div class="wrap heroGrid"><div class="heroContent">
-    <div class="eyebrow">Dealer Public Gold · Malaysia</div>
-    <h1>Intan<br><em>Mohd Supian.</em></h1>
-    <div class="heroStrap">Emas dengan lebih jelas</div>
-    <p class="intro">Saya bantu anda memahami pilihan untuk beli, simpan dan jual emas dengan jelas, tanpa tergesa-gesa.</p>
-    <div class="actions"><a class="button dark" href="https://wa.me/601154405100?text=Hai%20Intan%2C%20saya%20nak%20tanya%20tentang%20jual%20emas." target="_blank" rel="noopener">Saya nak jual emas <span>↗</span></a><a class="button gold" href="https://publicgold.com.my/index.php?route=account/register&intro_pgcode=PG01132974&is_dealer=1" target="_blank" rel="noopener">Beli atau buka akaun emas <span>↗</span></a></div>
+    <div class="eyebrow">Dealer Public Gold · PG01132974</div>
+    <h1>Intan<br><em>Mohd Supian</em></h1>
+    <p class="intro">Bina aset dan kukuhkan simpanan anda dengan emas</p>
     <div class="socialButtons heroSocials" id="socialButtons" aria-label="Media sosial Intan"></div>
   </div></div>
 </section>
