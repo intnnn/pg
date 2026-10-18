@@ -34,8 +34,8 @@ const page = `<!doctype html>
 .heroContent{max-width:580px}
 .hero .eyebrow{color:var(--gold2);letter-spacing:.25em;font-size:9px}
 .heroCredentials{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.verifiedDealer{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#16833d;color:#fff;font:700 12px/1 var(--sans);letter-spacing:0;text-transform:none;box-shadow:0 4px 14px rgba(0,0,0,.16)}
-.verifiedDealer svg{display:block;width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.verifiedDealer{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:#16833d;color:#fff;font:700 11px/1 var(--sans);letter-spacing:0;text-transform:none;box-shadow:0 4px 14px rgba(0,0,0,.16)}
+.verifiedDealer svg{display:block;width:13px;height:13px;flex:none;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 .dealerCode{color:var(--gold2);font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
 .hero h1{font:400 clamp(46px,4.6vw,64px)/.96 var(--serif);letter-spacing:-.055em;text-transform:uppercase;margin:9px 0 8px;max-width:none;text-shadow:0 2px 26px rgba(0,0,0,.16)}
 .hero h1 em{display:block;font-style:normal;font-weight:400;color:#f6efe3}
