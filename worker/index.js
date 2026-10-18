@@ -33,6 +33,10 @@ const page = `<!doctype html>
 .heroGrid{position:relative;z-index:1;display:block;padding:16px 0 20px}
 .heroContent{max-width:580px}
 .hero .eyebrow{color:var(--gold2);letter-spacing:.25em;font-size:9px}
+.heroCredentials{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.verifiedDealer{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#16833d;color:#fff;font:700 12px/1 var(--sans);letter-spacing:0;text-transform:none;box-shadow:0 4px 14px rgba(0,0,0,.16)}
+.verifiedDealer svg{display:block;width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.dealerCode{color:var(--gold2);font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
 .hero h1{font:400 clamp(46px,4.6vw,64px)/.96 var(--serif);letter-spacing:-.055em;text-transform:uppercase;margin:9px 0 8px;max-width:none;text-shadow:0 2px 26px rgba(0,0,0,.16)}
 .hero h1 em{display:block;font-style:normal;font-weight:400;color:#f6efe3}
 .heroStrap{display:flex;align-items:center;gap:10px;color:var(--gold2);font-size:10px;letter-spacing:.24em;text-transform:uppercase}
@@ -111,7 +115,7 @@ const page = `<!doctype html>
 <section class="hero">
   <div class="heroVisual"><img class="heroCoin" src="__COIN__" alt="" aria-hidden="true"><img class="heroPortrait" src="__HERO__" alt="Potret Intan Mohd Supian"></div>
   <div class="wrap heroGrid"><div class="heroContent">
-    <div class="eyebrow">Dealer Public Gold · PG01132974</div>
+    <div class="heroCredentials"><span class="verifiedDealer" aria-label="Verified Dealer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8"></path></svg>Verified Dealer</span><span class="dealerCode">PG01132974</span></div>
     <h1>Intan<br><em>Mohd Supian</em></h1>
     <p class="intro">Bina aset dan kukuhkan simpanan anda dengan emas</p>
     <div class="socialButtons heroSocials" id="socialButtons" aria-label="Media sosial Intan"></div>
