@@ -36,7 +36,7 @@ const page = `<!doctype html>
 .heroCredentials{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .verifiedDealer{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;border-radius:999px;background:#16833d;color:#fff;font:700 9px/1 var(--sans);letter-spacing:0;text-transform:none;box-shadow:0 3px 10px rgba(0,0,0,.14)}
 .verifiedDealer svg{display:block;width:10px;height:10px;flex:none;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.dealerCode{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:#d5b679;color:#17231c;font-size:8px;font-weight:700;line-height:1;letter-spacing:.14em;text-transform:uppercase}
+.dealerCode{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:#d5b679;color:#17231c;font-size:9px;font-weight:700;line-height:1;letter-spacing:.14em;text-transform:uppercase}
 .hero h1{font:400 clamp(46px,4.6vw,64px)/.96 var(--serif);letter-spacing:-.055em;text-transform:uppercase;margin:9px 0 8px;max-width:none;text-shadow:0 2px 26px rgba(0,0,0,.16)}
 .hero h1 em{display:block;font-style:normal;font-weight:400;color:#f6efe3}
 .heroStrap{display:flex;align-items:center;gap:10px;color:var(--gold2);font-size:10px;letter-spacing:.24em;text-transform:uppercase}
