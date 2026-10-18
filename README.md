@@ -26,3 +26,4 @@ dist/
 ```
 
 `dist/server/index.js` is an ES module with a default export containing `fetch(request, env, ctx)`. Edit `worker/index.js`, not the generated file under `dist/`.
+# pg
