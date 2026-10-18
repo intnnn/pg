@@ -1,0 +1,7 @@
+[build]
+  command = "bash scripts/build.sh && node scripts/build-netlify.mjs"
+  publish = "dist"
+
+[[edge_functions]]
+  function = "prices"
+  path = "/api/prices"
