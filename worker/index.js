@@ -150,6 +150,12 @@ const page = `<!doctype html>
 @media(max-width:900px) and (min-width:651px){.hero{min-height:420px}.priceExperience{grid-template-columns:145px minmax(0,1fr)}.priceTab{font-size:12px;padding:10px}.pricePanel .jewelFeature,.arrahnuFeature{grid-template-columns:1fr}.pricePanel .jewelBanner{max-height:220px}.arrahnuVisual{min-height:190px}}
 @media(max-width:760px){.pricePanel .rateCard{grid-template-columns:1fr}.pricePanel .rateSide{border-left:0;border-top:1px solid #e1e3de}.pricePanel .rateSide .calculatorFields{grid-template-columns:repeat(3,minmax(0,1fr))}.pricePanel .rateSide .calculatorResult{grid-column:auto}}
 @media(max-width:650px){.heroVisual{height:370px}.heroVisual .heroPortrait{width:275px;height:250px;top:5px;object-fit:cover;object-position:center top}.heroGrid{padding-top:225px}.priceExperience{grid-template-columns:1fr;gap:10px;padding:10px}.priceNav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:0}.priceNavLabel{grid-column:1/-1;margin:3px 4px 1px}.priceTab{min-height:38px;padding:8px 10px;font-size:11px}.pricePanel .jewelFeature,.arrahnuFeature{grid-template-columns:1fr;min-height:0;gap:17px;padding:15px}.pricePanel .jewelBanner{height:auto;min-height:0;max-height:none;aspect-ratio:2/1}.arrahnuVisual{min-height:175px}.arrahnuVisual img{width:min(75%,240px)}#prices + .trustStrip .trustInner{gap:15px}}
+.hero{min-height:360px}
+.heroVisual .heroPortrait{width:300px;height:auto;top:auto;bottom:0;object-fit:contain;object-position:center bottom}
+.socialButtons a{border-radius:12px}
+.galleryItem{border-radius:12px}
+@media(max-width:900px) and (min-width:651px){.hero{min-height:380px}}
+@media(max-width:650px){.heroVisual{height:300px}.heroVisual .heroPortrait{width:280px;height:auto;top:auto;bottom:0;object-fit:contain;object-position:center bottom}.heroGrid{padding:175px 0 24px}}
 </style>
 </head>
 <body>
