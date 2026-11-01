@@ -349,7 +349,7 @@ const page = `<!doctype html>
 .heroServicePurity{font-weight:400}
 .calculatorResult strong{font-size:19px}
 
-.heroVisual .heroEvent{position:absolute;z-index:0;left:-3%;top:-8%;width:106%;height:108%;max-width:none;object-fit:cover;object-position:75% 88%;opacity:.18;filter:saturate(.72) contrast(.86) brightness(.78);mix-blend-mode:screen;-webkit-mask-image:radial-gradient(ellipse at 50% 55%,#000 30%,rgba(0,0,0,.78) 62%,transparent 100%);mask-image:radial-gradient(ellipse at 50% 55%,#000 30%,rgba(0,0,0,.78) 62%,transparent 100%);pointer-events:none}
+.heroVisual .heroEvent{position:absolute;z-index:0;left:-3%;top:-8%;width:106%;height:108%;max-width:none;object-fit:cover;object-position:50% 88%;opacity:.18;filter:saturate(.72) contrast(.86) brightness(.78);mix-blend-mode:screen;-webkit-mask-image:radial-gradient(ellipse at 50% 55%,#000 30%,rgba(0,0,0,.78) 62%,transparent 100%);mask-image:radial-gradient(ellipse at 50% 55%,#000 30%,rgba(0,0,0,.78) 62%,transparent 100%);pointer-events:none}
 .heroVisual .heroPortrait{z-index:1}
 </style>
 </head>
