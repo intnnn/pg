@@ -512,7 +512,7 @@ const page = `<!doctype html>
 </main>
 <footer class="footer"><div class="wrap"><div class="footerTop"><div><div class="footerName">Intan Mohd Supian</div><p>Verified dealer Public Gold · PG01132974</p></div><nav class="footerNav"><a href="#prices">Kalkulator Emas</a><a href="#gallery">Galeri</a><a href="#learn">Artikel</a><a href="https://publicgold.com.my/" target="_blank" rel="noopener">Public Gold ↗</a></nav></div><div class="footerBase"><span>© <span id="year"></span> Intan Mohd Supian</span></div></div></footer>
 <script>
-const API='/api/prices';const $=(s,r=document)=>r.querySelector(s);const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const API=location.hostname==='publicgold.intnnn.com'?'https://publicgoldintan.netlify.app/api/prices':'/api/prices';const $=(s,r=document)=>r.querySelector(s);const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 
 const priceTabs=$$('[data-price-tab]');
 function activatePriceTab(name){
@@ -732,6 +732,16 @@ export default {
   async fetch(request) {
     const url = new URL(request.url);
     if (url.pathname === '/api/prices') {
+      const origin = request.headers.get('origin');
+      const headers = { 'cache-control': 'no-store, max-age=0', 'vary': 'Origin' };
+      if (origin === 'https://publicgold.intnnn.com') {
+        headers['access-control-allow-origin'] = origin;
+        headers['access-control-allow-methods'] = 'GET, OPTIONS';
+        headers['access-control-allow-headers'] = 'Content-Type';
+        headers['access-control-max-age'] = '600';
+      }
+      if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
+      if (request.method !== 'GET') return new Response('Method not allowed', { status: 405, headers });
       try {
         const upstream = await fetch(`https://publicgold.com.my/?_=${Date.now()}`, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GoldPriceReader/1.0)', 'Accept': 'text/html' }, cf: { cacheTtl: 0, cacheEverything: false } });
         if (!upstream.ok) throw new Error(`Official rate page returned ${upstream.status}.`);
@@ -740,9 +750,9 @@ export default {
         const buyback = parseTable(source, 'Non-PG Gold Buyback');
         const updatedAt = liveTimestamp(source);
         if (jewel.length !== 2 || buyback.length !== 2 || !updatedAt) throw new Error('Could not verify both price tables and their update time.');
-        return Response.json({ ok: true, jewel, buyback, updatedAt, source: 'https://publicgold.com.my/' }, { headers: { 'cache-control': 'no-store, max-age=0' } });
+        return Response.json({ ok: true, jewel, buyback, updatedAt, source: 'https://publicgold.com.my/' }, { headers });
       } catch (error) {
-        return Response.json({ ok: false, error: 'Harga semasa Public Gold tidak dapat dipaparkan buat sementara waktu.' }, { status: 503, headers: { 'cache-control': 'no-store, max-age=0' } });
+        return Response.json({ ok: false, error: 'Harga semasa Public Gold tidak dapat dipaparkan buat sementara waktu.' }, { status: 503, headers });
       }
     }
     if (url.pathname !== '/') return new Response('Not found', { status: 404 });

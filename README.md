@@ -1,49 +1,30 @@
-# Sites Worker ESM starter
+# Public Gold advisor website
 
-Use this starter for a static microsite, click counter, or simple internal UI whose state is browser-scoped. It has no dependencies and needs no install.
+Primary site: [publicgold.intnnn.com](https://publicgold.intnnn.com/), published with GitHub Pages.
 
-Edit `worker/index.js`, then publish through the Sites hosting workflow with this starter's build and validation in `commands`.
+The same site is also hosted at [publicgoldintan.netlify.app](https://publicgoldintan.netlify.app/) on Netlify. GitHub Pages serves the static site; Netlify provides the live price endpoint through its Edge Function.
 
-The build copies only `worker/index.js` and `.openai/hosting.json`. Do not add standalone asset files. Embed any essential raster bytes in `worker/index.js` and serve or reference them as a data URL.
+## Live price endpoint
 
-Pass these argument arrays as `commands`:
+The Netlify Edge Function at `netlify/edge-functions/prices.js` handles `/api/prices` as configured in `netlify.toml`, then delegates to the shared handler in `worker/index.js`. The handler reads the latest Public Gold price tables and returns them without caching.
 
-```json
-[
-  ["bash", "scripts/build.sh"],
-  ["node", "scripts/validate-artifact.mjs"]
-]
-```
+When the site is opened at `publicgold.intnnn.com`, the browser requests `https://publicgoldintan.netlify.app/api/prices`. The endpoint returns CORS headers only for `https://publicgold.intnnn.com`. On the Netlify-hosted copy and the ChatGPT Site, the browser uses the same-origin `/api/prices` route.
 
-The deterministic build produces:
+Keep the Netlify production site public so visitors to the GitHub Pages site can read the endpoint. The endpoint is public and read-only; do not put secrets in the frontend or repository.
 
-```text
-dist/
-├── .openai/
-│   └── hosting.json
-└── server/
-    └── index.js
-```
+## Build and deployment
 
-`dist/server/index.js` is an ES module with a default export containing `fetch(request, env, ctx)`. Edit `worker/index.js`, not the generated file under `dist/`.
-# pg
+Pushes to GitHub `main` trigger both the GitHub Pages workflow and the Netlify production build:
 
-## Deploy to Netlify
+- `.github/workflows/deploy-pages.yml` builds `dist/` and publishes it to GitHub Pages.
+- `netlify.toml` runs `bash scripts/build.sh && node scripts/build-netlify.mjs` and publishes `dist/` on Netlify.
 
-This repository deploys to the Netlify project `cozy-moxie-cee10f`. The GitHub `main` branch is the production branch, and pushes to `main` trigger Netlify's production build automatically.
+For site or price-endpoint changes, edit `worker/index.js` and other source files as needed. Do not edit generated files in `dist/`. Commit and push changes to [intnnn/pg](https://github.com/intnnn/pg), then confirm the GitHub Pages Actions run and Netlify production deploy both succeed.
 
-For website changes:
-
-1. Edit `worker/index.js` and any relevant source files. Do not edit generated files in `dist/`.
-2. Commit and push the changes to GitHub `main` (`https://github.com/intnnn/pg.git`).
-3. Check the Netlify project's Deploys page for the build started by that push. Confirm it finishes in the `ready` state before sharing the site.
-
-Netlify uses `netlify.toml` to run `bash scripts/build.sh && node scripts/build-netlify.mjs` and publish `dist/`. The first command builds the Worker module; the second renders the Worker response for `/` into `dist/index.html`. `netlify/edge-functions/prices.js` routes `/api/prices` to the existing Worker handler.
-
-To reproduce the build locally, run:
+To reproduce the Netlify build locally:
 
 ```sh
 bash scripts/build.sh && node scripts/build-netlify.mjs
 ```
 
-The production site is currently restricted by the Netlify team's access settings (SSO). Keep that access configuration as-is unless Intan asks to change it. Never store GitHub or Netlify credentials in this repository.
+The ChatGPT Site is published separately from the same Worker source.
